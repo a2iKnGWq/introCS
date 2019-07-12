@@ -1,0 +1,42 @@
+h1
+{
+    text-align: center;
+}
+
+footer
+{
+    font-size: small;
+    float: left; width: 80%;margin-left: 10%; margin-right: 10%;
+}
+
+body
+{
+    font-size: large;
+    background-color: rgba(50, 115, 220, 0.2);
+}
+
+note
+{
+    text-align: right;
+}
+
+ol
+{
+    border: 1px solid blue;
+}
+
+list
+{
+    float: left; width: 40%;margin-left: 5%; margin-right: 5%;
+}
+
+p
+{
+    float: left; width: 90%;margin-left: 5%; margin-right: 5%;
+}
+
+bot
+{
+    border-top: 1px solid black;
+    float: left; width: 100%;
+}
