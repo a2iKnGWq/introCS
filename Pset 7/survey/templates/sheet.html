@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h1>Registered</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr role="row">
+                <th>Name</th>
+                <th>Opinion</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for person in people %}
+            <tr role="row">
+                <td>{{ person[0] }}</td>
+                <td>{{ person[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+{% endblock %}
