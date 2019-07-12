@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <!-- not mine, but I don't think it's works anyway -->
+    <script>
+        $("#username").blur(function(){
+            $.get("/check", {username: $("#username").val()} , function(data){
+                if (data == "false"){
+                    $("form").submit(function(e){
+                        e.preventDefault();
+                        alert("Username Exists");
+                        location.reload();
+                    });
+                }
+            });
+        });
+    </script>
+    <form action="/register" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text" id="username">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Password again" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+{% endblock %}

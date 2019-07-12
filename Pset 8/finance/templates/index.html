@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class="table table-bordered">
+        <thead>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Total</th>
+        </thead>
+        <tbody>
+            {% for itered in portfolio %}
+            <tr>
+                <td>{{ itered.symbol }}</td>
+                <td>{{ itered.number_of_shares }}</td>
+                <td>{{ itered.price | usd }}</td>
+                <td>{{ (itered.price * itered.number_of_shares) | usd }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Remaining Balance:</td>
+                <td>{{ available_cash | usd}}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
